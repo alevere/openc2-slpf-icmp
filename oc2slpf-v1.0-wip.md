@@ -492,7 +492,7 @@ Table 2.3-1 defines the commands allowed by the SLPF profile and indicates if im
 | **ip_addr** | required | required |   |   |   |
 | **features** |   |   | required |   |   |
 | **slpf:rule_number** |   |   |   | optional |   |
-| **slpf:icmop_type** | optional  | optional  |   |   |   |
+| **slpf:icmp_type** | optional  | optional  |   |   |   |
 | **file** |   |   |   |   | optional |
 
 Table 2.3-2 defines the command arguments that are allowed for a particular command by the SLPF profile.  A command (the top row in Table 2.3-2) paired with an argument (the first column in Table 2.3-2) defines an allowable combination. The subsection identified at the intersection of the command/ argument provides details applicable to each command as influenced by the argument. 
