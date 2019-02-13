@@ -335,7 +335,7 @@ The slpf:Target type is defined in this specification and is referenced under th
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created, Identifies a rule to be deleted. |
-
+| 1 | **icmp_type** | ICMP-TYPE | Specifies a particular ICMP type such as echo-reply or router advertisement |
 Implementations that choose to support slpf:Target MUST support the **rule_number** target.
 
 ### 2.1.3 Command Arguments
@@ -401,7 +401,7 @@ The command arguments defined in this document are referenced under the slpf nam
 | Type Name | Type | Description |
 | :--- | :--- | :--- |
 | **Rule-ID** | Integer | Access rule identifier |
-
+| **ICMP-TYPE** | Integer | ICMP TYPE |
 The semantics/ requirements as they relate to SLPF arguments:  
 
 * insert_rule:
@@ -492,6 +492,7 @@ Table 2.3-1 defines the commands allowed by the SLPF profile and indicates if im
 | **ip_addr** | required | required |   |   |   |
 | **features** |   |   | required |   |   |
 | **slpf:rule_number** |   |   |   | optional |   |
+| **slpf:icmop_type** | optional  | optional  |   |   |   |
 | **file** |   |   |   |   | optional |
 
 Table 2.3-2 defines the command arguments that are allowed for a particular command by the SLPF profile.  A command (the top row in Table 2.3-2) paired with an argument (the first column in Table 2.3-2) defines an allowable combination. The subsection identified at the intersection of the command/ argument provides details applicable to each command as influenced by the argument. 
