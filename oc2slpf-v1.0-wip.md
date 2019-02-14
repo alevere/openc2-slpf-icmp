@@ -335,8 +335,7 @@ The slpf:Target type is defined in this specification and is referenced under th
 | ID | Name | Type | Description |
 | :--- | :--- | :--- | :--- |
 | 1 | **rule_number** | Rule-ID | Immutable identifier assigned when a rule is created, Identifies a rule to be deleted. |
-| 1 | **icmp_type** | ICMP-TYPE | Specifies a particular ICMP type such as echo-reply or router advertisement |
-Implementations that choose to support slpf:Target MUST support the **rule_number** target.
+| 2 | **icmp_type** | ICMP-TYPE | Specifies a particular ICMP type such as echo reply or router advertisement |
 
 ### 2.1.3 Command Arguments
 Arguments provide additional precision to a command by including information such as how, when, or where a command is to be executed.  Table 2.1.3-1 summarizes the command arguments defined in Version 1.0 of the OpenC2 Language Specification as they relate to SLPF functionality.  Table 2.1.3-2 summarizes the command arguments that are defined in this specification.
@@ -557,7 +556,7 @@ The ‘allow ip_connection’ command is required for openc2 producers implement
 
 If the ‘allow ip_addr’ target is not implemented, then SLPF consumers MUST implement the ‘allow ip-connection’ command. Otherwise it is OPTIONAL.  
 
-The command permits traffic that is consistent with the specified ip_connection.  A valid ‘allow ip_connection’ command has at least one property of the ip_connection populated and may have any combination of the five properties populated.  An unpopulated property within the the ip_connection target MUST be treated as an ‘any’.  
+The command permits traffic that is consistent with the specified ip_connection.  A valid ‘allow ip_connection’ command has at least one property of the ip_connection populated and may have any combination of the five properties populated.  An unpopulated property within the the ip_connection target MUST be treated as an ‘any’. A consumer MAY return a 500 or 501 status code if source port or destination port is specified and the L4 protocol is neither TCP nor UDP.
 
 Products that receive but do not implement the ‘allow ip_connection’ command:
 
@@ -1589,6 +1588,7 @@ The following individuals are acknowledged for providing comments, suggested tex
 * MacGregor, Scott- McAfee 
 * Martinez, Danny- G2, Inc. 
 * Mathews, Lisa- Department of Defense
+* Mavroeidis, Vasileios- University of Oslo
 * Ortiz, Efrain- Symantec 
 * Rajarathnam, Nirmal- ForeScout 
 * Riedel, Daniel- New Context 
